@@ -74,7 +74,7 @@ Input 1x3x416x416 · COCO mAP 34.4
 |---|---|---|---|---|
 | Dragonwing RB3 Gen 2 Vision Kit | tflite | float | 42.20 ms / 51.94 ms | 14/287 | — 14 NPU + 256 GPU + 17 CPU layers; profile jp42v0e8g
 | Dragonwing RB3 Gen 2 Vision Kit | tflite | w8a8 | 120.69 ms / 155.84 ms | 496/696 | — 496 NPU + 192 CPU + 8 GPU - CPU fallback makes w8a8 SLOWER than its own float path; quantize j5ml3yeyg, quantized model mm5dejoyk; profile jgj8lnqx5
-| Dragonwing RB3 Gen 2 Vision Kit | precompiled_qnn_onnx | w8a8 | — ms | — | — UNKNOWN: compile failed - a BatchNormalization fused-bias tensor was left in floating point, not supported by the targeted device (same failure family as NanoDet's QNN rejection)
+| Dragonwing RB3 Gen 2 Vision Kit | precompiled_qnn_onnx | w8a8 | — ms | — | — UNKNOWN: compile jp2zmk7xp failed - a BatchNormalization fused-bias tensor was left in floating point, not supported by the targeted device (same failure family as NanoDet QNN rejection)
 | Samsung Galaxy S25 | tflite | float | 1.96 ms / 1.99 ms | 287/287 | — all NPU; profile j5wr9evmp
 | Samsung Galaxy S25 | tflite | w8a8 | 2.42 ms / 2.44 ms | 696/696 | — all NPU; profile jp1m827lp
 | Samsung Galaxy S25 | precompiled_qnn_onnx | w8a8 | 2.30 ms / 2.33 ms | 570/570 | — all NPU; profile jp3rmny3p
