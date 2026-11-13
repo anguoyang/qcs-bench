@@ -40,7 +40,7 @@ Input 1x3x416x416 · COCO mAP 30.4
 | Samsung Galaxy S25 | tflite | float | 1.47 ms | 352/352 | — all NPU
 | Samsung Galaxy S25 | precompiled_qnn_onnx | w8a8 | 1.39 ms / 1.40 ms | 324/324 | — compile jp2d6vwq5
 
-### DAMO-YOLO-S* (Apache-2.0) — recipe NOT published: head-to-head vs official YOLOv8-S it wins COCO mAP (46.8 vs 44.9) but loses latency in all six cells; kept as an internal baseline, recorded here for honesty
+### DAMO-YOLO-S (TinyNAS L25, 640) - published at huggingface.co/anguoyang/damoyolo: the accuracy pick of this bench (+1.9 COCO mAP over the official YOLOv8-S recipe), w8a8 fully NPU-resident on both devices; ~2-3x slower than YOLOv8-S on the same silicon (latency table is the trade-off, in the open). Upstream checkpoint host is dead (OSS bucket gone); the recipe pins an HF mirror of the same file, sha256-verified
 
 Input 1x3x640x640 · COCO mAP 46.8
 
