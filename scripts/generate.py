@@ -46,6 +46,30 @@ def table_for(model):
     return "\n".join(lines)
 
 
+def genai_table_for(model):
+    def g(v):
+        return "UNKNOWN" if v is None else f"{v:.2f}"
+
+    lines = [
+        f"### {model['model_full']}",
+        "",
+        f"Checkpoint {model['checkpoint']}",
+        "",
+        "| Device | Runtime | Prefill (tok/s) | Decode (tok/s) | TTFT (ms) |",
+        "|---|---|---|---|---|",
+    ]
+    for c in model["cells"]:
+        dev = DEVICES[c["device"]]["name"]
+        job = f" ([job]({c['job']}))" if c.get("job") else ""
+        note = f" — {c['notes']}" if c.get("notes") else ""
+        lines.append(
+            f"| {dev} | {c['runtime']} | {g(c['prefill_tok_s'])} | "
+            f"{g(c['decode_tok_s'])} | {g(c['ttft_ms'])} |{job}{note}"
+        )
+    lines.append("")
+    return "\n".join(lines)
+
+
 def main():
     md = [
         "# qcs-bench",
