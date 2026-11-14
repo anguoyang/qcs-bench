@@ -89,7 +89,7 @@ Checkpoint DEFAULT_W4A16 official pre-quantized
 
 | Device | Runtime | Prefill (tok/s) | Decode (tok/s) | TTFT (ms) |
 |---|---|---|---|---|
-| Dragonwing RB3 Gen 2 Vision Kit | genie | UNKNOWN | UNKNOWN | UNKNOWN | ([job](https://workbench.aihub.qualcomm.com/jobs/jp0x1z32p/)) — Hub compile rejected: --output_names is not supported for AIMET ONNX models. Pipeline bug, not a chip rejection (qualcomm/ai-hub-models#366; fix promised in v0.67.0)
+| Dragonwing RB3 Gen 2 Vision Kit | genie | 1555.00 | 24.60 | 82.00 | ([job](https://workbench.aihub.qualcomm.com/jobs/jp42mo62g/)) — MEASURED 2026-11-14 on real RB3 Gen 2 silicon. Method: manual API chain bypassing the #366 client bug - 4 graph compiles (jpvne7nmg, j560rmdn5, jp3rx7lxp, jgkkokv2g), link jp42m292g, per-graph profiles (prompt 82,308 us/128 tok = embedding 392 + transformer 81,916, job jp42mo62g; decode 40,721 us/tok = 249 + 40,472, job j560rjxn5). Graph-profile derived, w4a16, context 512 - first public QCS6490 GenAI numbers.
 | Samsung Galaxy S25 | genie | UNKNOWN | UNKNOWN | UNKNOWN | ([job](https://workbench.aihub.qualcomm.com/jobs/jp2z70o4p/)) — Identical compile rejection on the officially supported flagship - device-independent
 | Dragonwing RB3 Gen 2 Vision Kit | geniex_llamacpp | UNKNOWN | UNKNOWN | UNKNOWN | — Unreachable in 0.66.0: q4_0 declared in supported_precisions but no quantization recipe ships (qualcomm/ai-hub-models#367)
 
