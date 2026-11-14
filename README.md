@@ -79,6 +79,20 @@ Input 1x3x416x416 · COCO mAP 34.4
 | Samsung Galaxy S25 | tflite | w8a8 | 2.42 ms / 2.44 ms | 696/696 | — all NPU; profile jp1m827lp
 | Samsung Galaxy S25 | precompiled_qnn_onnx | w8a8 | 2.30 ms / 2.33 ms | 570/570 | — all NPU; profile jp3rmny3p
 
+## GenAI — LLMs on device
+
+Tokens per second measured on real devices via Qualcomm AI Hub Workbench profile jobs. Runtime labels the execution path (genie = QNN/Genie context binary; geniex_llamacpp = GGUF via llama.cpp) — they are different stacks and are never merged into one number.
+
+### Qwen3-0.6B (LLM)
+
+Checkpoint DEFAULT_W4A16 official pre-quantized
+
+| Device | Runtime | Prefill (tok/s) | Decode (tok/s) | TTFT (ms) |
+|---|---|---|---|---|
+| Dragonwing RB3 Gen 2 Vision Kit | genie | UNKNOWN | UNKNOWN | UNKNOWN | ([job](https://workbench.aihub.qualcomm.com/jobs/jp0x1z32p/)) — Hub compile rejected: --output_names is not supported for AIMET ONNX models. Pipeline bug, not a chip rejection (qualcomm/ai-hub-models#366; fix promised in v0.67.0)
+| Samsung Galaxy S25 | genie | UNKNOWN | UNKNOWN | UNKNOWN | ([job](https://workbench.aihub.qualcomm.com/jobs/jp2z70o4p/)) — Identical compile rejection on the officially supported flagship - device-independent
+| Dragonwing RB3 Gen 2 Vision Kit | geniex_llamacpp | UNKNOWN | UNKNOWN | UNKNOWN | — Unreachable in 0.66.0: q4_0 declared in supported_precisions but no quantization recipe ships (qualcomm/ai-hub-models#367)
+
 ## Why the same model can be 27x faster
 
 YOLOv11-N on the RB3 (QCS6490): 134.7 ms with the default TFLite float path, 5.03 ms with w8a8 + precompiled QNN — same model, same chip. Most published numbers are the slow path. This repo exists so you pick the fast one on purpose.
