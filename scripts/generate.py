@@ -95,7 +95,22 @@ def main():
         "",
     ]
     for m in DATA["entries"]:
-        md.append(table_for(m))
+        if m.get("task") != "genai":
+            md.append(table_for(m))
+    genai = [m for m in DATA["entries"] if m.get("task") == "genai"]
+    if genai:
+        md.append("## GenAI — LLMs on device")
+        md.append("")
+        md.append(
+            "Tokens per second measured on real devices via Qualcomm AI Hub "
+            "Workbench profile jobs. Runtime labels the execution path "
+            "(genie = QNN/Genie context binary; geniex_llamacpp = GGUF via "
+            "llama.cpp) — they are different stacks and are never merged "
+            "into one number."
+        )
+        md.append("")
+        for m in genai:
+            md.append(genai_table_for(m))
     md.append("## Why the same model can be 27x faster")
     md.append("")
     md.append(

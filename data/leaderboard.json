@@ -377,39 +377,56 @@
       "task": "object_detection"
     },
     {
-      "model": "qwen3-0.6b",
-      "model_full": "Qwen3-0.6B (LLM)",
-      "task": "genai",
-      "checkpoint": "DEFAULT_W4A16 official pre-quantized",
       "cells": [
         {
-          "device": "rb3-gen2",
-          "runtime": "genie",
-          "prefill_tok_s": 1555,
           "decode_tok_s": 24.6,
-          "ttft_ms": 82,
-          "job": "https://workbench.aihub.qualcomm.com/jobs/jp42mo62g/",
-          "notes": "MEASURED 2026-11-14 on real RB3 Gen 2 silicon. Method: manual API chain bypassing the #366 client bug - 4 graph compiles (jpvne7nmg, j560rmdn5, jp3rx7lxp, jgkkokv2g), link jp42m292g, per-graph profiles (prompt 82,308 us/128 tok = embedding 392 + transformer 81,916, job jp42mo62g; decode 40,721 us/tok = 249 + 40,472, job j560rjxn5). Graph-profile derived, w4a16, context 512 - first public QCS6490 GenAI numbers."
-        },
-        {
-          "device": "s25",
-          "runtime": "genie",
-          "prefill_tok_s": null,
-          "decode_tok_s": null,
-          "ttft_ms": null,
-          "job": "https://workbench.aihub.qualcomm.com/jobs/jp2z70o4p/",
-          "notes": "Identical compile rejection on the officially supported flagship - device-independent"
-        },
-        {
           "device": "rb3-gen2",
-          "runtime": "geniex_llamacpp",
-          "prefill_tok_s": null,
+          "job": "https://workbench.aihub.qualcomm.com/jobs/jp42mo62g/",
+          "notes": "MEASURED 2026-11-14 on real RB3 Gen 2 silicon. Method: manual API chain bypassing the #366 client bug - 4 graph compiles (jpvne7nmg, j560rmdn5, jp3rx7lxp, jgkkokv2g), link jp42m292g, per-graph profiles (prompt 82,308 us/128 tok = embedding 392 + transformer 81,916, job jp42mo62g; decode 40,721 us/tok = 249 + 40,472, job j560rjxn5). Graph-profile derived, w4a16, context 512 - first public QCS6490 GenAI numbers.",
+          "prefill_tok_s": 1555,
+          "runtime": "genie",
+          "ttft_ms": 82
+        },
+        {
           "decode_tok_s": null,
-          "ttft_ms": null,
+          "device": "s25",
+          "job": "https://workbench.aihub.qualcomm.com/jobs/jp2z70o4p/",
+          "notes": "Identical compile rejection on the officially supported flagship - device-independent",
+          "prefill_tok_s": null,
+          "runtime": "genie",
+          "ttft_ms": null
+        },
+        {
+          "decode_tok_s": null,
+          "device": "rb3-gen2",
           "job": null,
-          "notes": "Unreachable in 0.66.0: q4_0 declared in supported_precisions but no quantization recipe ships (qualcomm/ai-hub-models#367)"
+          "notes": "Unreachable in 0.66.0: q4_0 declared in supported_precisions but no quantization recipe ships (qualcomm/ai-hub-models#367)",
+          "prefill_tok_s": null,
+          "runtime": "geniex_llamacpp",
+          "ttft_ms": null
         }
-      ]
+      ],
+      "checkpoint": "DEFAULT_W4A16 official pre-quantized",
+      "model": "qwen3-0.6b",
+      "model_full": "Qwen3-0.6B (LLM)",
+      "task": "genai"
+    },
+    {
+      "cells": [
+        {
+          "decode_tok_s": 16.4,
+          "device": "rb3-gen2",
+          "job": "https://workbench.aihub.qualcomm.com/jobs/jp1mv6vkp/",
+          "notes": "MEASURED 2026-11-15 on real RB3 Gen 2 silicon. Method: manual API chain (same #366-workaround family as the Qwen3-0.6B entry) - source uploads mqkkv033z/mq8kd5e2j/mqy3vr60v, 6 graph compiles (jg9qxxnwp, j5wr116mp, jg9qxx08p, jpyy77zlp, jgz044v45, jpr7nnovg), link jpvn9997g -> context binary mqkkv012k, per-graph profiles: prefill 125,020 us/128 tok = 384 + 46,614 + 78,022 (jobs jgz044l65, jp8k413qp, jp1mv6vkp); decode 61,063 us/tok = 155 + 20,679 + 40,229 (jobs jgkk9912g, j5mld84yg, jpvn9777g). Graph-profile derived, not a Genie end-to-end run; w4a16, context 512. First public QCS6490 measurement for this model. Unlike Qwen3, the Llama family ships no pre-quantized zip: official encodings + local ONNX export split into 3 parts from FP weights (export path requires torch<2.11, pinned per model requirements). FP weights bit-identical to the gated meta-llama repo (model.safetensors sha256 1ff795ff6a07e6a68085d206fb84417da2f083f68391c2843cd2b8ac6df8538f), sourced via the unsloth mirror because the hub account is not on the gated repo's authorized list.",
+          "prefill_tok_s": 1024,
+          "runtime": "genie",
+          "ttft_ms": 125
+        }
+      ],
+      "checkpoint": "DEFAULT_W4A16 (official AIMET encodings v6 + local ONNX export/split)",
+      "model": "llama-3.2-1b-instruct",
+      "model_full": "Llama 3.2 1B Instruct (LLM)",
+      "task": "genai"
     }
   ],
   "name": "qcs-bench",
@@ -429,5 +446,5 @@
   },
   "protocol_version": "1.0",
   "schema": 1,
-  "updated": "2026-11-13"
+  "updated": "2026-11-15"
 }
