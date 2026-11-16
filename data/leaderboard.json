@@ -409,7 +409,8 @@
       "checkpoint": "DEFAULT_W4A16 official pre-quantized",
       "model": "qwen3-0.6b",
       "model_full": "Qwen3-0.6B (LLM)",
-      "task": "genai"
+      "task": "genai",
+      "card": "qwen3-0.6b-qcs6490"
     },
     {
       "cells": [
@@ -426,7 +427,8 @@
       "checkpoint": "DEFAULT_W4A16 (official AIMET encodings v6 + local ONNX export/split)",
       "model": "llama-3.2-1b-instruct",
       "model_full": "Llama 3.2 1B Instruct (LLM)",
-      "task": "genai"
+      "task": "genai",
+      "card": "llama-3.2-1b-qcs6490"
     },
     {
       "cells": [
@@ -443,7 +445,8 @@
       "checkpoint": "w4a16 official AOT asset (fp16mix)",
       "model": "internvl3.5-2b",
       "model_full": "InternVL3.5-2B (VLM)",
-      "task": "genai"
+      "task": "genai",
+      "card": "internvl3.5-2b-qcs6490"
     }
   ],
   "name": "qcs-bench",

@@ -87,6 +87,8 @@ Tokens per second measured on real devices via Qualcomm AI Hub Workbench profile
 
 Checkpoint DEFAULT_W4A16 official pre-quantized
 
+Model card: [huggingface.co/anguoyang/qwen3-0.6b-qcs6490](https://huggingface.co/anguoyang/qwen3-0.6b-qcs6490)
+
 | Device | Runtime | Prefill (tok/s) | Decode (tok/s) | TTFT (ms) |
 |---|---|---|---|---|
 | Dragonwing RB3 Gen 2 Vision Kit | genie | 1555.00 | 24.60 | 82.00 | ([job](https://workbench.aihub.qualcomm.com/jobs/jp42mo62g/)) — MEASURED 2026-11-14 on real RB3 Gen 2 silicon. Method: manual API chain bypassing the #366 client bug - 4 graph compiles (jpvne7nmg, j560rmdn5, jp3rx7lxp, jgkkokv2g), link jp42m292g, per-graph profiles (prompt 82,308 us/128 tok = embedding 392 + transformer 81,916, job jp42mo62g; decode 40,721 us/tok = 249 + 40,472, job j560rjxn5). Graph-profile derived, w4a16, context 512 - first public QCS6490 GenAI numbers.
@@ -97,6 +99,8 @@ Checkpoint DEFAULT_W4A16 official pre-quantized
 
 Checkpoint DEFAULT_W4A16 (official AIMET encodings v6 + local ONNX export/split)
 
+Model card: [huggingface.co/anguoyang/llama-3.2-1b-qcs6490](https://huggingface.co/anguoyang/llama-3.2-1b-qcs6490)
+
 | Device | Runtime | Prefill (tok/s) | Decode (tok/s) | TTFT (ms) |
 |---|---|---|---|---|
 | Dragonwing RB3 Gen 2 Vision Kit | genie | 1024.00 | 16.40 | 125.00 | ([job](https://workbench.aihub.qualcomm.com/jobs/jp1mv6vkp/)) — MEASURED 2026-11-15 on real RB3 Gen 2 silicon. Method: manual API chain (same #366-workaround family as the Qwen3-0.6B entry) - source uploads mqkkv033z/mq8kd5e2j/mqy3vr60v, 6 graph compiles (jg9qxxnwp, j5wr116mp, jg9qxx08p, jpyy77zlp, jgz044v45, jpr7nnovg), link jpvn9997g -> context binary mqkkv012k, per-graph profiles: prefill 125,020 us/128 tok = 384 + 46,614 + 78,022 (jobs jgz044l65, jp8k413qp, jp1mv6vkp); decode 61,063 us/tok = 155 + 20,679 + 40,229 (jobs jgkk9912g, j5mld84yg, jpvn9777g). Graph-profile derived, not a Genie end-to-end run; w4a16, context 512. First public QCS6490 measurement for this model. Unlike Qwen3, the Llama family ships no pre-quantized zip: official encodings + local ONNX export split into 3 parts from FP weights (export path requires torch<2.11, pinned per model requirements). FP weights bit-identical to the gated meta-llama repo (model.safetensors sha256 1ff795ff6a07e6a68085d206fb84417da2f083f68391c2843cd2b8ac6df8538f), sourced via the unsloth mirror because the hub account is not on the gated repo's authorized list.
@@ -104,6 +108,8 @@ Checkpoint DEFAULT_W4A16 (official AIMET encodings v6 + local ONNX export/split)
 ### InternVL3.5-2B (VLM)
 
 Checkpoint w4a16 official AOT asset (fp16mix)
+
+Model card: [huggingface.co/anguoyang/internvl3.5-2b-qcs6490](https://huggingface.co/anguoyang/internvl3.5-2b-qcs6490)
 
 | Device | Runtime | Prefill (tok/s) | Decode (tok/s) | TTFT (ms) |
 |---|---|---|---|---|

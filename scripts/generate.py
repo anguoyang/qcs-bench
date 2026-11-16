@@ -55,6 +55,14 @@ def genai_table_for(model):
         "",
         f"Checkpoint {model['checkpoint']}",
         "",
+    ]
+    if model.get("card"):
+        lines += [
+            f"Model card: [huggingface.co/anguoyang/{model['card']}]"
+            f"(https://huggingface.co/anguoyang/{model['card']})",
+            "",
+        ]
+    lines += [
         "| Device | Runtime | Prefill (tok/s) | Decode (tok/s) | TTFT (ms) |",
         "|---|---|---|---|---|",
     ]
