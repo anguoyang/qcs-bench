@@ -427,6 +427,23 @@
       "model": "llama-3.2-1b-instruct",
       "model_full": "Llama 3.2 1B Instruct (LLM)",
       "task": "genai"
+    },
+    {
+      "cells": [
+        {
+          "decode_tok_s": null,
+          "device": "rb3-gen2",
+          "job": "https://workbench.aihub.qualcomm.com/jobs/jp42392vg/",
+          "notes": "MEASURED 2026-11-16 on real RB3 Gen 2 silicon, per-graph AI Hub profiles (estimated_inference_time), w4a16, context 512, manual API chain. Text backbone = 4 parts x 2 graphs. Prompt ar128 (us per 128 tok): part2 68,980 (job jp42392vg), part3 69,011 (jp1m66z8p), part4 36,122 (jgj8qql15). Decode ar1 (us per tok): part2 20,224 (jp423ymqg), part3 20,300 (jp3r6z6xp), part4 22,291 (jp0x6ov0p). PART 1 (layers 0-8) AND THE VISION ENCODER COULD NOT BE PROFILED: all 9 compiles succeed, but on-device QnnModel_composeGraphsFromDlc fails with MODEL_GRAPH_ERROR for part1 both graphs (5 attempts) and the vision encoder (3 attempts); linking the text graphs fails naming FP32 tensor '/model/model/layers.2/mlp/down_proj/Conv_bias' as not supported by the targeted device. Recompiling part1 with -O1 instead of -O0 (job jp1m6kvnp) does not change the compose failure - defect localized to the vendor AOT asset (fp16mix), not the compile options. Full-model prefill/decode therefore UNKNOWN; measured parts 2-4 alone sum to prompt 174,113 us and decode 62,815 us/tok. First public QCS6490 attempt for this VLM.",
+          "prefill_tok_s": null,
+          "runtime": "genie",
+          "ttft_ms": null
+        }
+      ],
+      "checkpoint": "w4a16 official AOT asset (fp16mix)",
+      "model": "internvl3.5-2b",
+      "model_full": "InternVL3.5-2B (VLM)",
+      "task": "genai"
     }
   ],
   "name": "qcs-bench",
@@ -446,5 +463,5 @@
   },
   "protocol_version": "1.0",
   "schema": 1,
-  "updated": "2026-11-15"
+  "updated": "2026-11-16"
 }
