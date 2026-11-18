@@ -527,6 +527,106 @@
      "runtime": "precompiled_qnn_onnx"
     }
    ]
+  },
+  {
+   "model": "deeplabv3-plus-mobilenet",
+   "model_full": "DeepLabV3+ MobileNet (MIT) — semantic segmentation",
+   "task": "segmentation",
+   "input": "1x3x520x520",
+   "coco_map": null,
+   "cells": [
+    {
+     "device": "rb3-gen2",
+     "job": "jpr7rdm0g",
+     "latency_ms_estimate": 154.726,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "compile jpr7rdm0g / profile jp2z1dqrp. Independent fp32-protocol measurement (breadth sweep). Upstream perf.yaml has quantized RB3 entries (w8a8 TFLite 16.8 ms); not directly comparable. HF card anguoyang/deeplabv3-plus-mobilenet-qcs6490",
+     "precision": "float",
+     "runtime": "precompiled_qnn_onnx"
+    }
+   ]
+  },
+  {
+   "model": "depth-anything-v2",
+   "model_full": "Depth Anything V2 (MIT) — monocular depth estimation",
+   "task": "depth_estimation",
+   "input": "1x3x518x518",
+   "coco_map": null,
+   "cells": [
+    {
+     "device": "rb3-gen2",
+     "job": "jp2z1d8rp",
+     "latency_ms_estimate": 1589.581,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "compile jp2z1d8rp / profile jpyyl2e8p. Independent fp32-protocol measurement (breadth sweep). Upstream perf.yaml has RB3 entries for other precisions/runtimes (fastest 85.6 ms); not directly comparable. HF card anguoyang/depth-anything-v2-qcs6490",
+     "precision": "float",
+     "runtime": "precompiled_qnn_onnx"
+    }
+   ]
+  },
+  {
+   "model": "movenet",
+   "model_full": "MoveNet (Apache-2.0) — single-pose estimation, 17 keypoints",
+   "task": "pose_estimation",
+   "input": "1x3x192x192",
+   "coco_map": null,
+   "cells": [
+    {
+     "device": "rb3-gen2",
+     "job": "j5ml7lx9g",
+     "latency_ms_estimate": 17.733,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "compile j5ml7lx9g / profile jgnw4wvqg. Independent fp32-protocol measurement (breadth sweep). Upstream perf.yaml has quantized RB3 entries. HF card anguoyang/movenet-qcs6490",
+     "precision": "float",
+     "runtime": "precompiled_qnn_onnx"
+    }
+   ]
+  },
+  {
+   "model": "sesr-m5",
+   "model_full": "SESR-M5 (BSD-3-Clause) — 4x super-resolution",
+   "task": "super_resolution",
+   "input": "1x3x128x128",
+   "coco_map": null,
+   "cells": [
+    {
+     "device": "rb3-gen2",
+     "job": "j5wrkrwmp",
+     "latency_ms_estimate": 40.357,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "compile j5wrkrwmp / profile jg9qrq08p. Independent fp32-protocol measurement (breadth sweep). Upstream perf.yaml has quantized RB3 entries. HF card anguoyang/sesr-m5-qcs6490",
+     "precision": "float",
+     "runtime": "precompiled_qnn_onnx"
+    }
+   ]
+  },
+  {
+   "model": "trocr",
+   "model_full": "TrOCR (MIT) — OCR, handwritten text recognition (encoder-decoder)",
+   "task": "ocr",
+   "input": "1x3x384x384",
+   "coco_map": null,
+   "cells": [
+    {
+     "device": "rb3-gen2",
+     "job": "jgkk1kqvg",
+     "latency_ms_estimate": 476.15,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "compile jgkk1kqvg / profile j5qdndreg. First public RB3 measurement (no RB3 entry in upstream perf.yaml 0.66.0). HF card anguoyang/trocr-qcs6490",
+     "precision": "float",
+     "runtime": "precompiled_qnn_onnx"
+    }
+   ]
   }
  ],
  "name": "qcs-bench",
@@ -546,5 +646,5 @@
  },
  "protocol_version": "1.0",
  "schema": 1,
- "updated": "2026-11-18T23:50:20Z"
+ "updated": "2026-11-18T23:54:00Z"
 }
