@@ -43,7 +43,7 @@
      "latency_ms_median": null,
      "layers_npu": null,
      "layers_total": null,
-     "notes": "UNKNOWN: compile failed, exit code 14 only (job jp1193rnp)",
+     "notes": "Root cause confirmed by Qualcomm maintainer (ai-hub-models #364, 2026-11-19): w8a16 compile emitted int16xint16 matmul kernels, which have no kernel on Hexagon v68 (RB3 Gen 2); diagnostic '[4294967295] has incorrect Value 68, expected >= 73'. w8a16 unsupported for this model on RB3 Gen 2; use w8a8 instead. compile job jp1193rnp (bare 'exit code 14' in job result)",
      "precision": "w8a16",
      "runtime": "precompiled_qnn_onnx"
     },
@@ -546,5 +546,5 @@
  },
  "protocol_version": "1.0",
  "schema": 1,
- "updated": "2026-11-18T21:22:10Z"
+ "updated": "2026-11-18T21:54:40Z"
 }
