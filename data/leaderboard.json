@@ -507,6 +507,26 @@
      "runtime": "precompiled_qnn_onnx"
     }
    ]
+  },
+  {
+   "model": "efficientnet-lite4",
+   "model_full": "EfficientNet-Lite4 (Google, Apache-2.0) — image classification, 1000 classes",
+   "task": "image_classification",
+   "input": "1x3x300x300",
+   "coco_map": null,
+   "cells": [
+    {
+     "device": "rb3-gen2",
+     "job": "jpvn8mdmg",
+     "latency_ms_estimate": 28.014,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "First public RB3 measurement (no RB3 entry in upstream perf.yaml 0.66.0). Breadth-sweep mop-up round after NCHW harness fix. compile jpvn8mdmg / profile jg9qr2mvp. HF card anguoyang/efficientnet-lite4-qcs6490",
+     "precision": "float",
+     "runtime": "precompiled_qnn_onnx"
+    }
+   ]
   }
  ],
  "name": "qcs-bench",
@@ -526,5 +546,5 @@
  },
  "protocol_version": "1.0",
  "schema": 1,
- "updated": "2026-11-18T21:14:27Z"
+ "updated": "2026-11-18T21:22:10Z"
 }
