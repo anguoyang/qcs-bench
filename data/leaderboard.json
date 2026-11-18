@@ -1,470 +1,530 @@
 {
-  "devices": {
-    "rb3-gen2": {
-      "chipset": "QCS6490",
-      "name": "Dragonwing RB3 Gen 2 Vision Kit",
-      "source": "Qualcomm AI Hub Workbench (cloud device)"
-    },
-    "s25": {
-      "chipset": "Snapdragon 8 Elite (SM8750)",
-      "name": "Samsung Galaxy S25",
-      "source": "Qualcomm AI Hub Workbench (cloud device)"
-    }
+ "devices": {
+  "rb3-gen2": {
+   "chipset": "QCS6490",
+   "name": "Dragonwing RB3 Gen 2 Vision Kit",
+   "source": "Qualcomm AI Hub Workbench (cloud device)"
   },
-  "entries": [
+  "s25": {
+   "chipset": "Snapdragon 8 Elite (SM8750)",
+   "name": "Samsung Galaxy S25",
+   "source": "Qualcomm AI Hub Workbench (cloud device)"
+  }
+ },
+ "entries": [
+  {
+   "cells": [
     {
-      "cells": [
-        {
-          "device": "rb3-gen2",
-          "job": null,
-          "latency_ms_estimate": 134.7,
-          "latency_ms_median": null,
-          "layers_npu": 19,
-          "layers_total": 343,
-          "notes": "DynamicConv2D falls back to CPU",
-          "precision": "float",
-          "runtime": "tflite"
-        },
-        {
-          "device": "rb3-gen2",
-          "job": "jprdr9kkg",
-          "latency_ms_estimate": 5.03,
-          "latency_ms_median": null,
-          "layers_npu": 341,
-          "layers_total": 341,
-          "notes": "compile jprdr9kkg / profile jgk01dnv5",
-          "precision": "w8a8",
-          "runtime": "precompiled_qnn_onnx"
-        },
-        {
-          "device": "rb3-gen2",
-          "job": "jp1193rnp",
-          "latency_ms_estimate": null,
-          "latency_ms_median": null,
-          "layers_npu": null,
-          "layers_total": null,
-          "notes": "UNKNOWN: compile failed, exit code 14 only (job jp1193rnp)",
-          "precision": "w8a16",
-          "runtime": "precompiled_qnn_onnx"
-        },
-        {
-          "device": "rb3-gen2",
-          "job": null,
-          "latency_ms_estimate": null,
-          "latency_ms_median": null,
-          "layers_npu": null,
-          "layers_total": null,
-          "notes": "UNKNOWN: compose failed on device",
-          "precision": "float",
-          "runtime": "qnn_dlc"
-        },
-        {
-          "device": "s25",
-          "job": null,
-          "latency_ms_estimate": 2.94,
-          "latency_ms_median": null,
-          "layers_npu": null,
-          "layers_total": null,
-          "notes": "all NPU",
-          "precision": "float",
-          "runtime": "tflite"
-        },
-        {
-          "device": "s25",
-          "job": null,
-          "latency_ms_estimate": 2.97,
-          "latency_ms_median": null,
-          "layers_npu": null,
-          "layers_total": null,
-          "notes": "all NPU",
-          "precision": "float",
-          "runtime": "precompiled_qnn_onnx"
-        }
-      ],
-      "coco_map": null,
-      "input": "1x3x640x640",
-      "model": "yolo11n",
-      "model_full": "YOLOv11-N (Ultralytics, AGPL-3.0 — benchmark reference only, not shipped as a recipe)",
-      "task": "object_detection"
+     "device": "rb3-gen2",
+     "job": null,
+     "latency_ms_estimate": 134.7,
+     "latency_ms_median": null,
+     "layers_npu": 19,
+     "layers_total": 343,
+     "notes": "DynamicConv2D falls back to CPU",
+     "precision": "float",
+     "runtime": "tflite"
     },
     {
-      "cells": [
-        {
-          "device": "rb3-gen2",
-          "job": "jgd49eorg",
-          "latency_ms_estimate": 90.0,
-          "latency_ms_median": null,
-          "layers_npu": 60,
-          "layers_total": 352,
-          "notes": "60 NPU + 123 GPU + 169 CPU fallback layers; profile jgd49eorg",
-          "precision": "float",
-          "runtime": "tflite"
-        },
-        {
-          "device": "rb3-gen2",
-          "job": "jgow04lkp",
-          "latency_ms_estimate": 6.47,
-          "latency_ms_median": 7.61,
-          "layers_npu": 439,
-          "layers_total": 439,
-          "notes": "compile jgow04lkp / profile jgk0mxj25; quantized model mn0xxo2pz",
-          "precision": "w8a8",
-          "runtime": "tflite"
-        },
-        {
-          "device": "rb3-gen2",
-          "job": "jprdqn07g",
-          "latency_ms_estimate": null,
-          "latency_ms_median": null,
-          "layers_npu": null,
-          "layers_total": null,
-          "notes": "UNKNOWN: Workbench rejected the quantized graph — float tensor /distribution_project/... remains (GFL decode arithmetic not quantized by the Hub quantizer), compile jprdqn07g",
-          "precision": "w8a8",
-          "runtime": "precompiled_qnn_onnx"
-        },
-        {
-          "device": "s25",
-          "job": null,
-          "latency_ms_estimate": 1.47,
-          "latency_ms_median": null,
-          "layers_npu": 352,
-          "layers_total": 352,
-          "notes": "all NPU",
-          "precision": "float",
-          "runtime": "tflite"
-        },
-        {
-          "device": "s25",
-          "job": "jp2d6vwq5",
-          "latency_ms_estimate": 1.39,
-          "latency_ms_median": 1.4,
-          "layers_npu": 324,
-          "layers_total": 324,
-          "notes": "compile jp2d6vwq5",
-          "precision": "w8a8",
-          "runtime": "precompiled_qnn_onnx"
-        }
-      ],
-      "coco_map": 30.4,
-      "input": "1x3x416x416",
-      "model": "nanodet-plus-m-416",
-      "model_full": "NanoDet-Plus-m 416 (Apache-2.0) — recipe: huggingface.co/anguoyang/nanodet",
-      "task": "object_detection"
+     "device": "rb3-gen2",
+     "job": "jprdr9kkg",
+     "latency_ms_estimate": 5.03,
+     "latency_ms_median": null,
+     "layers_npu": 341,
+     "layers_total": 341,
+     "notes": "compile jprdr9kkg / profile jgk01dnv5",
+     "precision": "w8a8",
+     "runtime": "precompiled_qnn_onnx"
     },
     {
-      "cells": [
-        {
-          "device": "rb3-gen2",
-          "job": "jpxznzn95",
-          "latency_ms_estimate": 180.35,
-          "latency_ms_median": 238.8,
-          "layers_npu": 26,
-          "layers_total": 186,
-          "notes": "138 GPU + 22 CPU fallback layers; profile jpxznzn95",
-          "precision": "float",
-          "runtime": "tflite"
-        },
-        {
-          "device": "rb3-gen2",
-          "job": "j5mlqm1yg",
-          "latency_ms_estimate": 15.62,
-          "latency_ms_median": 17.82,
-          "layers_npu": 214,
-          "layers_total": 214,
-          "notes": "quantize j578040lp, quantized model mq3eed2p6; profile j5mlqm1yg",
-          "precision": "w8a8",
-          "runtime": "tflite"
-        },
-        {
-          "device": "rb3-gen2",
-          "job": "jpyyr20rp",
-          "latency_ms_estimate": 13.27,
-          "latency_ms_median": 14.78,
-          "layers_npu": 231,
-          "layers_total": 231,
-          "notes": "profile jpyyr20rp",
-          "precision": "w8a8",
-          "runtime": "precompiled_qnn_onnx"
-        },
-        {
-          "device": "s25",
-          "job": "jpenk831p",
-          "latency_ms_estimate": 7.88,
-          "latency_ms_median": 7.94,
-          "layers_npu": 186,
-          "layers_total": 186,
-          "notes": "all NPU; profile jpenk831p",
-          "precision": "float",
-          "runtime": "tflite"
-        },
-        {
-          "device": "s25",
-          "job": "jpvnv90kg",
-          "latency_ms_estimate": 6.13,
-          "latency_ms_median": 6.49,
-          "layers_npu": 214,
-          "layers_total": 214,
-          "notes": "profile jpvnv90kg",
-          "precision": "w8a8",
-          "runtime": "tflite"
-        },
-        {
-          "device": "s25",
-          "job": "j5ml3d6dg",
-          "latency_ms_estimate": 2.43,
-          "latency_ms_median": 2.46,
-          "layers_npu": 234,
-          "layers_total": 234,
-          "notes": "profile j5ml3d6dg",
-          "precision": "w8a8",
-          "runtime": "precompiled_qnn_onnx"
-        }
-      ],
-      "coco_map": 46.8,
-      "input": "1x3x640x640",
-      "model": "damoyolo-s",
-      "model_full": "DAMO-YOLO-S (TinyNAS L25, 640) - published at huggingface.co/anguoyang/damoyolo: the accuracy pick of this bench (+1.9 COCO mAP over the official YOLOv8-S recipe), w8a8 fully NPU-resident on both devices; ~2-3x slower than YOLOv8-S on the same silicon (latency table is the trade-off, in the open). Upstream checkpoint host is dead (OSS bucket gone); the recipe pins an HF mirror of the same file, sha256-verified",
-      "task": "object_detection"
+     "device": "rb3-gen2",
+     "job": "jp1193rnp",
+     "latency_ms_estimate": null,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "UNKNOWN: compile failed, exit code 14 only (job jp1193rnp)",
+     "precision": "w8a16",
+     "runtime": "precompiled_qnn_onnx"
     },
     {
-      "cells": [
-        {
-          "device": "rb3-gen2",
-          "job": "j578x77np",
-          "latency_ms_estimate": 62.35,
-          "latency_ms_median": 83.19,
-          "layers_npu": 13,
-          "layers_total": 259,
-          "notes": "13 NPU + 224 GPU + 22 CPU fallback layers; compile jgz0r4445 / profile j578x77np",
-          "precision": "float",
-          "runtime": "tflite"
-        },
-        {
-          "device": "rb3-gen2",
-          "job": "j578x74np",
-          "latency_ms_estimate": 5.04,
-          "latency_ms_median": 6.81,
-          "layers_npu": 286,
-          "layers_total": 286,
-          "notes": "compile jgz0r4m45 / profile j578x74np; quantized model mmx7eekly",
-          "precision": "w8a8",
-          "runtime": "tflite"
-        },
-        {
-          "device": "rb3-gen2",
-          "job": "jgz0r4665",
-          "latency_ms_estimate": 6.0,
-          "latency_ms_median": 6.69,
-          "layers_npu": 285,
-          "layers_total": 285,
-          "notes": "compile jg9qwx7qp / profile jgz0r4665",
-          "precision": "w8a8",
-          "runtime": "precompiled_qnn_onnx"
-        },
-        {
-          "device": "s25",
-          "job": "j5ml386dg",
-          "latency_ms_estimate": 2.66,
-          "latency_ms_median": 2.72,
-          "layers_npu": 259,
-          "layers_total": 259,
-          "notes": "all NPU; compile jgdmo2erg / profile j5ml386dg",
-          "precision": "float",
-          "runtime": "tflite"
-        },
-        {
-          "device": "s25",
-          "job": "jpyy6mvlp",
-          "latency_ms_estimate": 0.92,
-          "latency_ms_median": 0.95,
-          "layers_npu": 286,
-          "layers_total": 286,
-          "notes": "compile jpenky4vp / profile jpyy6mvlp",
-          "precision": "w8a8",
-          "runtime": "tflite"
-        },
-        {
-          "device": "s25",
-          "job": "jp1me6nnp",
-          "latency_ms_estimate": 1.25,
-          "latency_ms_median": 1.29,
-          "layers_npu": 288,
-          "layers_total": 288,
-          "notes": "compile jpyy6mm0p / profile jp1me6nnp",
-          "precision": "w8a8",
-          "runtime": "precompiled_qnn_onnx"
-        }
-      ],
-      "coco_map": 44.9,
-      "input": "1x3x640x640",
-      "model": "yolov8s",
-      "model_full": "YOLOv8-S (Ultralytics, AGPL-3.0 — benchmark reference only, not shipped as a recipe); official Qualcomm AI Hub Models baseline",
-      "task": "object_detection"
+     "device": "rb3-gen2",
+     "job": null,
+     "latency_ms_estimate": null,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "UNKNOWN: compose failed on device",
+     "precision": "float",
+     "runtime": "qnn_dlc"
     },
     {
-      "cells": [
-        {
-          "device": "rb3-gen2",
-          "job": "jp42v0e8g",
-          "latency_ms_estimate": 42.2,
-          "latency_ms_median": 51.94,
-          "layers_npu": 14,
-          "layers_total": 287,
-          "notes": "14 NPU + 256 GPU + 17 CPU layers; profile jp42v0e8g",
-          "precision": "float",
-          "runtime": "tflite"
-        },
-        {
-          "device": "rb3-gen2",
-          "job": "jgj8lnqx5",
-          "latency_ms_estimate": 120.69,
-          "latency_ms_median": 155.84,
-          "layers_npu": 496,
-          "layers_total": 696,
-          "notes": "496 NPU + 192 CPU + 8 GPU - CPU fallback makes w8a8 SLOWER than its own float path; quantize j5ml3yeyg, quantized model mm5dejoyk; profile jgj8lnqx5",
-          "precision": "w8a8",
-          "runtime": "tflite"
-        },
-        {
-          "device": "rb3-gen2",
-          "job": "jp2zmk7xp",
-          "latency_ms_estimate": null,
-          "latency_ms_median": null,
-          "layers_npu": null,
-          "layers_total": null,
-          "notes": "UNKNOWN: compile jp2zmk7xp failed - a BatchNormalization fused-bias tensor was left in floating point, not supported by the targeted device (same failure family as NanoDet QNN rejection)",
-          "precision": "w8a8",
-          "runtime": "precompiled_qnn_onnx"
-        },
-        {
-          "device": "s25",
-          "job": "j5wr9evmp",
-          "latency_ms_estimate": 1.96,
-          "latency_ms_median": 1.99,
-          "layers_npu": 287,
-          "layers_total": 287,
-          "notes": "all NPU; profile j5wr9evmp",
-          "precision": "float",
-          "runtime": "tflite"
-        },
-        {
-          "device": "s25",
-          "job": "jp1m827lp",
-          "latency_ms_estimate": 2.42,
-          "latency_ms_median": 2.44,
-          "layers_npu": 696,
-          "layers_total": 696,
-          "notes": "all NPU; profile jp1m827lp",
-          "precision": "w8a8",
-          "runtime": "tflite"
-        },
-        {
-          "device": "s25",
-          "job": "jp3rmny3p",
-          "latency_ms_estimate": 2.3,
-          "latency_ms_median": 2.33,
-          "layers_npu": 570,
-          "layers_total": 570,
-          "notes": "all NPU; profile jp3rmny3p",
-          "precision": "w8a8",
-          "runtime": "precompiled_qnn_onnx"
-        }
-      ],
-      "coco_map": 34.4,
-      "input": "1x3x416x416",
-      "model": "picodet-m-416",
-      "model_full": "PicoDet-M 416 (PaddleDetection, Apache-2.0) - recipe NOT published: wins COCO mAP vs NanoDet (34.4 vs 30.4) and the RB3 float cell, but its w8a8 graph falls back to CPU on RB3 and runs ~18x slower than NanoDet on the headline path; recorded for honesty. Graph exported with export.nms=false (the stock NMS-in-graph export failed all six cells: TFLite unknown-rank, QNN subgraph split)",
-      "task": "object_detection"
+     "device": "s25",
+     "job": null,
+     "latency_ms_estimate": 2.94,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "all NPU",
+     "precision": "float",
+     "runtime": "tflite"
     },
     {
-      "cells": [
-        {
-          "decode_tok_s": 24.6,
-          "device": "rb3-gen2",
-          "job": "https://workbench.aihub.qualcomm.com/jobs/jp42mo62g/",
-          "notes": "MEASURED 2026-11-14 on real RB3 Gen 2 silicon. Method: manual API chain bypassing the #366 client bug - 4 graph compiles (jpvne7nmg, j560rmdn5, jp3rx7lxp, jgkkokv2g), link jp42m292g, per-graph profiles (prompt 82,308 us/128 tok = embedding 392 + transformer 81,916, job jp42mo62g; decode 40,721 us/tok = 249 + 40,472, job j560rjxn5). Graph-profile derived, w4a16, context 512 - first public QCS6490 GenAI numbers.",
-          "prefill_tok_s": 1555,
-          "runtime": "genie",
-          "ttft_ms": 82
-        },
-        {
-          "decode_tok_s": null,
-          "device": "s25",
-          "job": "https://workbench.aihub.qualcomm.com/jobs/jp2z70o4p/",
-          "notes": "Identical compile rejection on the officially supported flagship - device-independent",
-          "prefill_tok_s": null,
-          "runtime": "genie",
-          "ttft_ms": null
-        },
-        {
-          "decode_tok_s": null,
-          "device": "rb3-gen2",
-          "job": null,
-          "notes": "Unreachable in 0.66.0: q4_0 declared in supported_precisions but no quantization recipe ships (qualcomm/ai-hub-models#367)",
-          "prefill_tok_s": null,
-          "runtime": "geniex_llamacpp",
-          "ttft_ms": null
-        }
-      ],
-      "checkpoint": "DEFAULT_W4A16 official pre-quantized",
-      "model": "qwen3-0.6b",
-      "model_full": "Qwen3-0.6B (LLM)",
-      "task": "genai",
-      "card": "qwen3-0.6b-qcs6490"
-    },
-    {
-      "cells": [
-        {
-          "decode_tok_s": 16.4,
-          "device": "rb3-gen2",
-          "job": "https://workbench.aihub.qualcomm.com/jobs/jp1mv6vkp/",
-          "notes": "MEASURED 2026-11-15 on real RB3 Gen 2 silicon. Method: manual API chain (same #366-workaround family as the Qwen3-0.6B entry) - source uploads mqkkv033z/mq8kd5e2j/mqy3vr60v, 6 graph compiles (jg9qxxnwp, j5wr116mp, jg9qxx08p, jpyy77zlp, jgz044v45, jpr7nnovg), link jpvn9997g -> context binary mqkkv012k, per-graph profiles: prefill 125,020 us/128 tok = 384 + 46,614 + 78,022 (jobs jgz044l65, jp8k413qp, jp1mv6vkp); decode 61,063 us/tok = 155 + 20,679 + 40,229 (jobs jgkk9912g, j5mld84yg, jpvn9777g). Graph-profile derived, not a Genie end-to-end run; w4a16, context 512. First public QCS6490 measurement for this model. Unlike Qwen3, the Llama family ships no pre-quantized zip: official encodings + local ONNX export split into 3 parts from FP weights (export path requires torch<2.11, pinned per model requirements). FP weights bit-identical to the gated meta-llama repo (model.safetensors sha256 1ff795ff6a07e6a68085d206fb84417da2f083f68391c2843cd2b8ac6df8538f), sourced via the unsloth mirror because the hub account is not on the gated repo's authorized list.",
-          "prefill_tok_s": 1024,
-          "runtime": "genie",
-          "ttft_ms": 125
-        }
-      ],
-      "checkpoint": "DEFAULT_W4A16 (official AIMET encodings v6 + local ONNX export/split)",
-      "model": "llama-3.2-1b-instruct",
-      "model_full": "Llama 3.2 1B Instruct (LLM)",
-      "task": "genai",
-      "card": "llama-3.2-1b-qcs6490"
-    },
-    {
-      "cells": [
-        {
-          "decode_tok_s": null,
-          "device": "rb3-gen2",
-          "job": "https://workbench.aihub.qualcomm.com/jobs/jp42392vg/",
-          "notes": "MEASURED 2026-11-16 on real RB3 Gen 2 silicon, per-graph AI Hub profiles (estimated_inference_time), w4a16, context 512, manual API chain. Text backbone = 4 parts x 2 graphs. Prompt ar128 (us per 128 tok): part2 68,980 (job jp42392vg), part3 69,011 (jp1m66z8p), part4 36,122 (jgj8qql15). Decode ar1 (us per tok): part2 20,224 (jp423ymqg), part3 20,300 (jp3r6z6xp), part4 22,291 (jp0x6ov0p). PART 1 (layers 0-8) AND THE VISION ENCODER COULD NOT BE PROFILED: all 9 compiles succeed, but on-device QnnModel_composeGraphsFromDlc fails with MODEL_GRAPH_ERROR for part1 both graphs (5 attempts) and the vision encoder (3 attempts); linking the text graphs fails naming FP32 tensor '/model/model/layers.2/mlp/down_proj/Conv_bias' as not supported by the targeted device. Recompiling part1 with -O1 instead of -O0 (job jp1m6kvnp) does not change the compose failure - defect localized to the vendor AOT asset (fp16mix), not the compile options. Full-model prefill/decode therefore UNKNOWN; measured parts 2-4 alone sum to prompt 174,113 us and decode 62,815 us/tok. First public QCS6490 attempt for this VLM.",
-          "prefill_tok_s": null,
-          "runtime": "genie",
-          "ttft_ms": null
-        }
-      ],
-      "checkpoint": "w4a16 official AOT asset (fp16mix)",
-      "model": "internvl3.5-2b",
-      "model_full": "InternVL3.5-2B (VLM)",
-      "task": "genai",
-      "card": "internvl3.5-2b-qcs6490"
+     "device": "s25",
+     "job": null,
+     "latency_ms_estimate": 2.97,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "all NPU",
+     "precision": "float",
+     "runtime": "precompiled_qnn_onnx"
     }
+   ],
+   "coco_map": null,
+   "input": "1x3x640x640",
+   "model": "yolo11n",
+   "model_full": "YOLOv11-N (Ultralytics, AGPL-3.0 — benchmark reference only, not shipped as a recipe)",
+   "task": "object_detection"
+  },
+  {
+   "cells": [
+    {
+     "device": "rb3-gen2",
+     "job": "jgd49eorg",
+     "latency_ms_estimate": 90.0,
+     "latency_ms_median": null,
+     "layers_npu": 60,
+     "layers_total": 352,
+     "notes": "60 NPU + 123 GPU + 169 CPU fallback layers; profile jgd49eorg",
+     "precision": "float",
+     "runtime": "tflite"
+    },
+    {
+     "device": "rb3-gen2",
+     "job": "jgow04lkp",
+     "latency_ms_estimate": 6.47,
+     "latency_ms_median": 7.61,
+     "layers_npu": 439,
+     "layers_total": 439,
+     "notes": "compile jgow04lkp / profile jgk0mxj25; quantized model mn0xxo2pz",
+     "precision": "w8a8",
+     "runtime": "tflite"
+    },
+    {
+     "device": "rb3-gen2",
+     "job": "jprdqn07g",
+     "latency_ms_estimate": null,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "UNKNOWN: Workbench rejected the quantized graph — float tensor /distribution_project/... remains (GFL decode arithmetic not quantized by the Hub quantizer), compile jprdqn07g",
+     "precision": "w8a8",
+     "runtime": "precompiled_qnn_onnx"
+    },
+    {
+     "device": "s25",
+     "job": null,
+     "latency_ms_estimate": 1.47,
+     "latency_ms_median": null,
+     "layers_npu": 352,
+     "layers_total": 352,
+     "notes": "all NPU",
+     "precision": "float",
+     "runtime": "tflite"
+    },
+    {
+     "device": "s25",
+     "job": "jp2d6vwq5",
+     "latency_ms_estimate": 1.39,
+     "latency_ms_median": 1.4,
+     "layers_npu": 324,
+     "layers_total": 324,
+     "notes": "compile jp2d6vwq5",
+     "precision": "w8a8",
+     "runtime": "precompiled_qnn_onnx"
+    }
+   ],
+   "coco_map": 30.4,
+   "input": "1x3x416x416",
+   "model": "nanodet-plus-m-416",
+   "model_full": "NanoDet-Plus-m 416 (Apache-2.0) — recipe: huggingface.co/anguoyang/nanodet",
+   "task": "object_detection"
+  },
+  {
+   "cells": [
+    {
+     "device": "rb3-gen2",
+     "job": "jpxznzn95",
+     "latency_ms_estimate": 180.35,
+     "latency_ms_median": 238.8,
+     "layers_npu": 26,
+     "layers_total": 186,
+     "notes": "138 GPU + 22 CPU fallback layers; profile jpxznzn95",
+     "precision": "float",
+     "runtime": "tflite"
+    },
+    {
+     "device": "rb3-gen2",
+     "job": "j5mlqm1yg",
+     "latency_ms_estimate": 15.62,
+     "latency_ms_median": 17.82,
+     "layers_npu": 214,
+     "layers_total": 214,
+     "notes": "quantize j578040lp, quantized model mq3eed2p6; profile j5mlqm1yg",
+     "precision": "w8a8",
+     "runtime": "tflite"
+    },
+    {
+     "device": "rb3-gen2",
+     "job": "jpyyr20rp",
+     "latency_ms_estimate": 13.27,
+     "latency_ms_median": 14.78,
+     "layers_npu": 231,
+     "layers_total": 231,
+     "notes": "profile jpyyr20rp",
+     "precision": "w8a8",
+     "runtime": "precompiled_qnn_onnx"
+    },
+    {
+     "device": "s25",
+     "job": "jpenk831p",
+     "latency_ms_estimate": 7.88,
+     "latency_ms_median": 7.94,
+     "layers_npu": 186,
+     "layers_total": 186,
+     "notes": "all NPU; profile jpenk831p",
+     "precision": "float",
+     "runtime": "tflite"
+    },
+    {
+     "device": "s25",
+     "job": "jpvnv90kg",
+     "latency_ms_estimate": 6.13,
+     "latency_ms_median": 6.49,
+     "layers_npu": 214,
+     "layers_total": 214,
+     "notes": "profile jpvnv90kg",
+     "precision": "w8a8",
+     "runtime": "tflite"
+    },
+    {
+     "device": "s25",
+     "job": "j5ml3d6dg",
+     "latency_ms_estimate": 2.43,
+     "latency_ms_median": 2.46,
+     "layers_npu": 234,
+     "layers_total": 234,
+     "notes": "profile j5ml3d6dg",
+     "precision": "w8a8",
+     "runtime": "precompiled_qnn_onnx"
+    }
+   ],
+   "coco_map": 46.8,
+   "input": "1x3x640x640",
+   "model": "damoyolo-s",
+   "model_full": "DAMO-YOLO-S (TinyNAS L25, 640) - published at huggingface.co/anguoyang/damoyolo: the accuracy pick of this bench (+1.9 COCO mAP over the official YOLOv8-S recipe), w8a8 fully NPU-resident on both devices; ~2-3x slower than YOLOv8-S on the same silicon (latency table is the trade-off, in the open). Upstream checkpoint host is dead (OSS bucket gone); the recipe pins an HF mirror of the same file, sha256-verified",
+   "task": "object_detection"
+  },
+  {
+   "cells": [
+    {
+     "device": "rb3-gen2",
+     "job": "j578x77np",
+     "latency_ms_estimate": 62.35,
+     "latency_ms_median": 83.19,
+     "layers_npu": 13,
+     "layers_total": 259,
+     "notes": "13 NPU + 224 GPU + 22 CPU fallback layers; compile jgz0r4445 / profile j578x77np",
+     "precision": "float",
+     "runtime": "tflite"
+    },
+    {
+     "device": "rb3-gen2",
+     "job": "j578x74np",
+     "latency_ms_estimate": 5.04,
+     "latency_ms_median": 6.81,
+     "layers_npu": 286,
+     "layers_total": 286,
+     "notes": "compile jgz0r4m45 / profile j578x74np; quantized model mmx7eekly",
+     "precision": "w8a8",
+     "runtime": "tflite"
+    },
+    {
+     "device": "rb3-gen2",
+     "job": "jgz0r4665",
+     "latency_ms_estimate": 6.0,
+     "latency_ms_median": 6.69,
+     "layers_npu": 285,
+     "layers_total": 285,
+     "notes": "compile jg9qwx7qp / profile jgz0r4665",
+     "precision": "w8a8",
+     "runtime": "precompiled_qnn_onnx"
+    },
+    {
+     "device": "s25",
+     "job": "j5ml386dg",
+     "latency_ms_estimate": 2.66,
+     "latency_ms_median": 2.72,
+     "layers_npu": 259,
+     "layers_total": 259,
+     "notes": "all NPU; compile jgdmo2erg / profile j5ml386dg",
+     "precision": "float",
+     "runtime": "tflite"
+    },
+    {
+     "device": "s25",
+     "job": "jpyy6mvlp",
+     "latency_ms_estimate": 0.92,
+     "latency_ms_median": 0.95,
+     "layers_npu": 286,
+     "layers_total": 286,
+     "notes": "compile jpenky4vp / profile jpyy6mvlp",
+     "precision": "w8a8",
+     "runtime": "tflite"
+    },
+    {
+     "device": "s25",
+     "job": "jp1me6nnp",
+     "latency_ms_estimate": 1.25,
+     "latency_ms_median": 1.29,
+     "layers_npu": 288,
+     "layers_total": 288,
+     "notes": "compile jpyy6mm0p / profile jp1me6nnp",
+     "precision": "w8a8",
+     "runtime": "precompiled_qnn_onnx"
+    }
+   ],
+   "coco_map": 44.9,
+   "input": "1x3x640x640",
+   "model": "yolov8s",
+   "model_full": "YOLOv8-S (Ultralytics, AGPL-3.0 — benchmark reference only, not shipped as a recipe); official Qualcomm AI Hub Models baseline",
+   "task": "object_detection"
+  },
+  {
+   "cells": [
+    {
+     "device": "rb3-gen2",
+     "job": "jp42v0e8g",
+     "latency_ms_estimate": 42.2,
+     "latency_ms_median": 51.94,
+     "layers_npu": 14,
+     "layers_total": 287,
+     "notes": "14 NPU + 256 GPU + 17 CPU layers; profile jp42v0e8g",
+     "precision": "float",
+     "runtime": "tflite"
+    },
+    {
+     "device": "rb3-gen2",
+     "job": "jgj8lnqx5",
+     "latency_ms_estimate": 120.69,
+     "latency_ms_median": 155.84,
+     "layers_npu": 496,
+     "layers_total": 696,
+     "notes": "496 NPU + 192 CPU + 8 GPU - CPU fallback makes w8a8 SLOWER than its own float path; quantize j5ml3yeyg, quantized model mm5dejoyk; profile jgj8lnqx5",
+     "precision": "w8a8",
+     "runtime": "tflite"
+    },
+    {
+     "device": "rb3-gen2",
+     "job": "jp2zmk7xp",
+     "latency_ms_estimate": null,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "UNKNOWN: compile jp2zmk7xp failed - a BatchNormalization fused-bias tensor was left in floating point, not supported by the targeted device (same failure family as NanoDet QNN rejection)",
+     "precision": "w8a8",
+     "runtime": "precompiled_qnn_onnx"
+    },
+    {
+     "device": "s25",
+     "job": "j5wr9evmp",
+     "latency_ms_estimate": 1.96,
+     "latency_ms_median": 1.99,
+     "layers_npu": 287,
+     "layers_total": 287,
+     "notes": "all NPU; profile j5wr9evmp",
+     "precision": "float",
+     "runtime": "tflite"
+    },
+    {
+     "device": "s25",
+     "job": "jp1m827lp",
+     "latency_ms_estimate": 2.42,
+     "latency_ms_median": 2.44,
+     "layers_npu": 696,
+     "layers_total": 696,
+     "notes": "all NPU; profile jp1m827lp",
+     "precision": "w8a8",
+     "runtime": "tflite"
+    },
+    {
+     "device": "s25",
+     "job": "jp3rmny3p",
+     "latency_ms_estimate": 2.3,
+     "latency_ms_median": 2.33,
+     "layers_npu": 570,
+     "layers_total": 570,
+     "notes": "all NPU; profile jp3rmny3p",
+     "precision": "w8a8",
+     "runtime": "precompiled_qnn_onnx"
+    }
+   ],
+   "coco_map": 34.4,
+   "input": "1x3x416x416",
+   "model": "picodet-m-416",
+   "model_full": "PicoDet-M 416 (PaddleDetection, Apache-2.0) - recipe NOT published: wins COCO mAP vs NanoDet (34.4 vs 30.4) and the RB3 float cell, but its w8a8 graph falls back to CPU on RB3 and runs ~18x slower than NanoDet on the headline path; recorded for honesty. Graph exported with export.nms=false (the stock NMS-in-graph export failed all six cells: TFLite unknown-rank, QNN subgraph split)",
+   "task": "object_detection"
+  },
+  {
+   "cells": [
+    {
+     "decode_tok_s": 24.6,
+     "device": "rb3-gen2",
+     "job": "https://workbench.aihub.qualcomm.com/jobs/jp42mo62g/",
+     "notes": "MEASURED 2026-11-14 on real RB3 Gen 2 silicon. Method: manual API chain bypassing the #366 client bug - 4 graph compiles (jpvne7nmg, j560rmdn5, jp3rx7lxp, jgkkokv2g), link jp42m292g, per-graph profiles (prompt 82,308 us/128 tok = embedding 392 + transformer 81,916, job jp42mo62g; decode 40,721 us/tok = 249 + 40,472, job j560rjxn5). Graph-profile derived, w4a16, context 512 - first public QCS6490 GenAI numbers.",
+     "prefill_tok_s": 1555,
+     "runtime": "genie",
+     "ttft_ms": 82
+    },
+    {
+     "decode_tok_s": null,
+     "device": "s25",
+     "job": "https://workbench.aihub.qualcomm.com/jobs/jp2z70o4p/",
+     "notes": "Identical compile rejection on the officially supported flagship - device-independent",
+     "prefill_tok_s": null,
+     "runtime": "genie",
+     "ttft_ms": null
+    },
+    {
+     "decode_tok_s": null,
+     "device": "rb3-gen2",
+     "job": null,
+     "notes": "Unreachable in 0.66.0: q4_0 declared in supported_precisions but no quantization recipe ships (qualcomm/ai-hub-models#367)",
+     "prefill_tok_s": null,
+     "runtime": "geniex_llamacpp",
+     "ttft_ms": null
+    }
+   ],
+   "checkpoint": "DEFAULT_W4A16 official pre-quantized",
+   "model": "qwen3-0.6b",
+   "model_full": "Qwen3-0.6B (LLM)",
+   "task": "genai",
+   "card": "qwen3-0.6b-qcs6490"
+  },
+  {
+   "cells": [
+    {
+     "decode_tok_s": 16.4,
+     "device": "rb3-gen2",
+     "job": "https://workbench.aihub.qualcomm.com/jobs/jp1mv6vkp/",
+     "notes": "MEASURED 2026-11-15 on real RB3 Gen 2 silicon. Method: manual API chain (same #366-workaround family as the Qwen3-0.6B entry) - source uploads mqkkv033z/mq8kd5e2j/mqy3vr60v, 6 graph compiles (jg9qxxnwp, j5wr116mp, jg9qxx08p, jpyy77zlp, jgz044v45, jpr7nnovg), link jpvn9997g -> context binary mqkkv012k, per-graph profiles: prefill 125,020 us/128 tok = 384 + 46,614 + 78,022 (jobs jgz044l65, jp8k413qp, jp1mv6vkp); decode 61,063 us/tok = 155 + 20,679 + 40,229 (jobs jgkk9912g, j5mld84yg, jpvn9777g). Graph-profile derived, not a Genie end-to-end run; w4a16, context 512. First public QCS6490 measurement for this model. Unlike Qwen3, the Llama family ships no pre-quantized zip: official encodings + local ONNX export split into 3 parts from FP weights (export path requires torch<2.11, pinned per model requirements). FP weights bit-identical to the gated meta-llama repo (model.safetensors sha256 1ff795ff6a07e6a68085d206fb84417da2f083f68391c2843cd2b8ac6df8538f), sourced via the unsloth mirror because the hub account is not on the gated repo's authorized list.",
+     "prefill_tok_s": 1024,
+     "runtime": "genie",
+     "ttft_ms": 125
+    }
+   ],
+   "checkpoint": "DEFAULT_W4A16 (official AIMET encodings v6 + local ONNX export/split)",
+   "model": "llama-3.2-1b-instruct",
+   "model_full": "Llama 3.2 1B Instruct (LLM)",
+   "task": "genai",
+   "card": "llama-3.2-1b-qcs6490"
+  },
+  {
+   "cells": [
+    {
+     "decode_tok_s": null,
+     "device": "rb3-gen2",
+     "job": "https://workbench.aihub.qualcomm.com/jobs/jp42392vg/",
+     "notes": "MEASURED 2026-11-16 on real RB3 Gen 2 silicon, per-graph AI Hub profiles (estimated_inference_time), w4a16, context 512, manual API chain. Text backbone = 4 parts x 2 graphs. Prompt ar128 (us per 128 tok): part2 68,980 (job jp42392vg), part3 69,011 (jp1m66z8p), part4 36,122 (jgj8qql15). Decode ar1 (us per tok): part2 20,224 (jp423ymqg), part3 20,300 (jp3r6z6xp), part4 22,291 (jp0x6ov0p). PART 1 (layers 0-8) AND THE VISION ENCODER COULD NOT BE PROFILED: all 9 compiles succeed, but on-device QnnModel_composeGraphsFromDlc fails with MODEL_GRAPH_ERROR for part1 both graphs (5 attempts) and the vision encoder (3 attempts); linking the text graphs fails naming FP32 tensor '/model/model/layers.2/mlp/down_proj/Conv_bias' as not supported by the targeted device. Recompiling part1 with -O1 instead of -O0 (job jp1m6kvnp) does not change the compose failure - defect localized to the vendor AOT asset (fp16mix), not the compile options. Full-model prefill/decode therefore UNKNOWN; measured parts 2-4 alone sum to prompt 174,113 us and decode 62,815 us/tok. First public QCS6490 attempt for this VLM.",
+     "prefill_tok_s": null,
+     "runtime": "genie",
+     "ttft_ms": null
+    }
+   ],
+   "checkpoint": "w4a16 official AOT asset (fp16mix)",
+   "model": "internvl3.5-2b",
+   "model_full": "InternVL3.5-2B (VLM)",
+   "task": "genai",
+   "card": "internvl3.5-2b-qcs6490"
+  },
+  {
+   "model": "nomic-embed-text-v1",
+   "model_full": "Nomic Embed Text v1 (nomic-ai, Apache-2.0) — text embedding, 512-d",
+   "task": "text_embedding",
+   "input": "1x128 tokens",
+   "coco_map": null,
+   "cells": [
+    {
+     "device": "rb3-gen2",
+     "job": "jgkkk30ng",
+     "latency_ms_estimate": 423.889,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "First public RB3 measurement (no RB3 entry in upstream perf.yaml 0.66.0). compile jgkkk30ng / profile j5600n0y5. HF card anguoyang/nomic-embed-text-qcs6490",
+     "precision": "float",
+     "runtime": "precompiled_qnn_onnx"
+    }
+   ]
+  },
+  {
+   "model": "netvlad",
+   "model_full": "NetVLAD (VGG16-based, MIT) — image retrieval, 32768-d descriptor",
+   "task": "image_retrieval",
+   "input": "1x3x480x640",
+   "coco_map": null,
+   "cells": [
+    {
+     "device": "rb3-gen2",
+     "job": "j5781q3vp",
+     "latency_ms_estimate": 218.883,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "First public RB3 measurement (no RB3 entry in upstream perf.yaml 0.66.0). compile j5781q3vp / profile jp426z08g. HF card anguoyang/netvlad-qcs6490",
+     "precision": "float",
+     "runtime": "precompiled_qnn_onnx"
+    }
+   ]
+  },
+  {
+   "model": "all-minilm-l6-v2",
+   "model_full": "all-MiniLM-L6-v2 (sentence-transformers, Apache-2.0) — text embedding, 384-d",
+   "task": "text_embedding",
+   "input": "1x128 tokens",
+   "coco_map": null,
+   "cells": [
+    {
+     "device": "rb3-gen2",
+     "job": "jp8kdoxzp",
+     "latency_ms_estimate": 39.624,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "First public RB3 measurement (no RB3 entry in upstream perf.yaml 0.66.0; the RB3 string there is only a supported-devices list entry). compile jp8kdoxzp / profile jgkkwz4yg. HF card anguoyang/minilm-v2-qcs6490",
+     "precision": "float",
+     "runtime": "precompiled_qnn_onnx"
+    }
+   ]
+  }
+ ],
+ "name": "qcs-bench",
+ "protocol": {
+  "calibration": "23 real COCO val2017 images, squash-resized to model input, RGB float32 [0,1]; same set for every quantized model",
+  "failures": "a cell that does not compile or profile is recorded as UNKNOWN with the job id and the failure text, never filled in from another cell",
+  "layer_split": "per-layer compute_unit from the profile JSON (NPU/GPU/CPU)",
+  "precisions": [
+   "float",
+   "w8a8"
   ],
-  "name": "qcs-bench",
-  "protocol": {
-    "calibration": "23 real COCO val2017 images, squash-resized to model input, RGB float32 [0,1]; same set for every quantized model",
-    "failures": "a cell that does not compile or profile is recorded as UNKNOWN with the job id and the failure text, never filled in from another cell",
-    "layer_split": "per-layer compute_unit from the profile JSON (NPU/GPU/CPU)",
-    "precisions": [
-      "float",
-      "w8a8"
-    ],
-    "runtimes": [
-      "tflite",
-      "precompiled_qnn_onnx"
-    ],
-    "timing": "Workbench profile job, ~100 inference runs per cell; latency shown as profile estimate (first/min run) and median over the run list"
-  },
-  "protocol_version": "1.0",
-  "schema": 1,
-  "updated": "2026-11-16"
+  "runtimes": [
+   "tflite",
+   "precompiled_qnn_onnx"
+  ],
+  "timing": "Workbench profile job, ~100 inference runs per cell; latency shown as profile estimate (first/min run) and median over the run list"
+ },
+ "protocol_version": "1.0",
+ "schema": 1,
+ "updated": "2026-11-18T21:14:27Z"
 }
