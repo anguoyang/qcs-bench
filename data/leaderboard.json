@@ -627,6 +627,86 @@
      "runtime": "precompiled_qnn_onnx"
     }
    ]
+  },
+  {
+   "model": "posenet-mobilenet",
+   "model_full": "PoseNet MobileNet (Apache-2.0) — pose estimation, 17 keypoints",
+   "task": "pose_estimation",
+   "input": "1x3x513x257",
+   "coco_map": null,
+   "cells": [
+    {
+     "device": "rb3-gen2",
+     "job": "j5qdjn6og",
+     "latency_ms_estimate": 22.975,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "Independent fp32-protocol measurement (breadth sweep mop-up). Upstream perf.yaml has quantized RB3 entries. compile j5qdjn6og / profile jglqjd4mp. HF card anguoyang/posenet-mobilenet-qcs6490",
+     "precision": "float",
+     "runtime": "precompiled_qnn_onnx"
+    }
+   ]
+  },
+  {
+   "model": "quicksrnet-medium",
+   "model_full": "QuickSRNet Medium (BSD-3-Clause) — 4x super-resolution",
+   "task": "super_resolution",
+   "input": "1x3x128x128",
+   "coco_map": null,
+   "cells": [
+    {
+     "device": "rb3-gen2",
+     "job": "j5qdjnreg",
+     "latency_ms_estimate": 12.928,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "Independent fp32-protocol measurement (breadth sweep mop-up). Upstream perf.yaml has quantized RB3 entries. compile j5qdjnreg / profile jglqjd22p. HF card anguoyang/quicksrnet-medium-qcs6490",
+     "precision": "float",
+     "runtime": "precompiled_qnn_onnx"
+    }
+   ]
+  },
+  {
+   "model": "real-esrgan-x4plus",
+   "model_full": "Real-ESRGAN x4plus (BSD-3-Clause) — 4x super-resolution (GAN)",
+   "task": "super_resolution",
+   "input": "1x3x128x128",
+   "coco_map": null,
+   "cells": [
+    {
+     "device": "rb3-gen2",
+     "job": "jgkkj13vg",
+     "latency_ms_estimate": 1639.814,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "Independent fp32-protocol measurement (breadth sweep mop-up). Upstream perf.yaml has quantized RB3 entries. compile jgkkj13vg / profile j560kxnn5. HF card anguoyang/real-esrgan-x4plus-qcs6490",
+     "precision": "float",
+     "runtime": "precompiled_qnn_onnx"
+    }
+   ]
+  },
+  {
+   "model": "segformer-base",
+   "model_full": "SegFormer Base (Apache-2.0) — semantic segmentation, 150 classes",
+   "task": "segmentation",
+   "input": "1x3x512x512",
+   "coco_map": null,
+   "cells": [
+    {
+     "device": "rb3-gen2",
+     "job": "j578qmvqp",
+     "latency_ms_estimate": 97.599,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "Independent fp32-protocol measurement (breadth sweep mop-up). Upstream perf.yaml has quantized RB3 entries. compile j578qmvqp / profile j5mlj7vyg. HF card anguoyang/segformer-base-qcs6490",
+     "precision": "float",
+     "runtime": "precompiled_qnn_onnx"
+    }
+   ]
   }
  ],
  "name": "qcs-bench",
@@ -646,5 +726,5 @@
  },
  "protocol_version": "1.0",
  "schema": 1,
- "updated": "2026-11-18T23:54:00Z"
+ "updated": "2026-11-19T21:08:35Z"
 }
