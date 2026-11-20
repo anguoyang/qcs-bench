@@ -707,6 +707,26 @@
      "runtime": "precompiled_qnn_onnx"
     }
    ]
+  },
+  {
+   "model": "openai-clip",
+   "model_full": "OpenAI CLIP ViT-B/32 (MIT) — multimodal retrieval (image-text)",
+   "task": "multimodal_retrieval",
+   "input": "1x3x224x224 + 1x5x77 tokens",
+   "coco_map": null,
+   "cells": [
+    {
+     "device": "rb3-gen2",
+     "job": "jg9qv1nwp",
+     "latency_ms_estimate": 964.059,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "Independent fp32-protocol measurement (breadth sweep mop-up). Upstream perf.yaml has an RB3 entry. compile jg9qv1nwp / profile jgdmw91rg. HF card anguoyang/openai-clip-qcs6490",
+     "precision": "float",
+     "runtime": "precompiled_qnn_onnx"
+    }
+   ]
   }
  ],
  "name": "qcs-bench",
@@ -726,5 +746,5 @@
  },
  "protocol_version": "1.0",
  "schema": 1,
- "updated": "2026-11-19T21:08:35Z"
+ "updated": "2026-11-20T10:03:12Z"
 }
