@@ -727,6 +727,26 @@
      "runtime": "precompiled_qnn_onnx"
     }
    ]
+  },
+  {
+   "model": "easyocr",
+   "model_full": "EasyOCR (Apache-2.0) — OCR, scene-text detection + recognition (combined graph)",
+   "task": "ocr",
+   "input": "1x3x608x800",
+   "coco_map": null,
+   "cells": [
+    {
+     "device": "rb3-gen2",
+     "job": "j57839o9p",
+     "latency_ms_estimate": 515.112,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "compile j57839o9p / profile jp4203e1g. Independent measurement under uniform fp32 protocol; upstream perf.yaml has per-component RB3 entries (W8A8 TFLite: detector 52.9 ms NPU, recognizer 159.1 ms all-CPU), not directly comparable. HF card anguoyang/easyocr-qcs6490",
+     "precision": "float",
+     "runtime": "precompiled_qnn_onnx"
+    }
+   ]
   }
  ],
  "name": "qcs-bench",
@@ -746,5 +766,5 @@
  },
  "protocol_version": "1.0",
  "schema": 1,
- "updated": "2026-11-20T10:03:12Z"
+ "updated": "2026-11-21"
 }
