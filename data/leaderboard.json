@@ -747,6 +747,26 @@
      "runtime": "precompiled_qnn_onnx"
     }
    ]
+  },
+  {
+   "model": "midas",
+   "model_full": "MiDaS (MIT) — monocular depth estimation (small)",
+   "task": "depth_estimation",
+   "input": "1x3x256x256",
+   "coco_map": null,
+   "cells": [
+    {
+     "device": "rb3-gen2",
+     "job": "jpx8kxd35",
+     "latency_ms_estimate": 36.569,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "compile jpx8kxd35 / profile j5m1n8dd5. Independent measurement under uniform fp32 protocol; upstream perf.yaml has RB3 entries under W8A8 (3.9-4.3 ms by runtime), not directly comparable. HF card anguoyang/midas-qcs6490",
+     "precision": "float",
+     "runtime": "precompiled_qnn_onnx"
+    }
+   ]
   }
  ],
  "name": "qcs-bench",
