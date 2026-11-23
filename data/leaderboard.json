@@ -767,6 +767,46 @@
      "runtime": "precompiled_qnn_onnx"
     }
    ]
+  },
+  {
+   "model": "siglip2",
+   "model_full": "SigLIP2 image encoder (Google, Apache-2.0) — image-text retrieval, 768-d image embedding",
+   "task": "multimodal_retrieval",
+   "input": "1x3x224x224",
+   "coco_map": null,
+   "cells": [
+    {
+     "device": "rb3-gen2",
+     "job": "jp084jjn5",
+     "latency_ms_estimate": 476.958,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "Independent measurement under uniform fp32 protocol (image encoder only). Upstream perf.yaml 0.66.0 has an RB3 entry for the image encoder under W8A16 (18.5 ms, ONNX runtime), not directly comparable. compile jp084jjn5 / profile jp3ln97np. HF card anguoyang/siglip2-qcs6490",
+     "precision": "float",
+     "runtime": "precompiled_qnn_onnx"
+    }
+   ]
+  },
+  {
+   "model": "mobilenet-v3-small",
+   "model_full": "MobileNetV3-Small (pytorch/vision, BSD-3-Clause) — image classification, 1000 classes",
+   "task": "image_classification",
+   "input": "1x3x224x224",
+   "coco_map": null,
+   "cells": [
+    {
+     "device": "rb3-gen2",
+     "job": "jgnd04orp",
+     "latency_ms_estimate": 3.744,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "First public RB3 measurement (no RB3 Gen 2 entry in upstream perf.yaml 0.66.0). compile jgnd04orp / profile jp1k29v2g. HF card anguoyang/mobilenet-v3-small-qcs6490",
+     "precision": "float",
+     "runtime": "precompiled_qnn_onnx"
+    }
+   ]
   }
  ],
  "name": "qcs-bench",
@@ -786,5 +826,5 @@
  },
  "protocol_version": "1.0",
  "schema": 1,
- "updated": "2026-11-21"
+ "updated": "2026-11-24"
 }
