@@ -807,6 +807,106 @@
      "runtime": "precompiled_qnn_onnx"
     }
    ]
+  },
+  {
+   "model": "densenet121",
+   "model_full": "DenseNet-121 (pytorch/vision, BSD-3-Clause) — image classification, 1000 classes",
+   "task": "image_classification",
+   "input": "1x3x224x224",
+   "coco_map": null,
+   "cells": [
+    {
+     "device": "rb3-gen2",
+     "job": "jprm4r8eg",
+     "latency_ms_estimate": 38.412,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "First public RB3 measurement (no RB3 Gen 2 entry in upstream perf.yaml 0.66.0). compile jprm4r8eg / profile jgl90d6lg. HF card anguoyang/densenet121-qcs6490",
+     "precision": "float",
+     "runtime": "precompiled_qnn_onnx"
+    }
+   ]
+  },
+  {
+   "model": "cvt",
+   "model_full": "Cross-view Transformers CVT (MIT) — BEV map-view semantic segmentation, 6-camera input",
+   "task": "segmentation",
+   "input": "6 cameras 1x3x224x480 + intrinsics/extrinsics",
+   "coco_map": null,
+   "cells": [
+    {
+     "device": "rb3-gen2",
+     "job": "jgl90dqmg",
+     "latency_ms_estimate": 1404.228,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "First public RB3 measurement (no RB3 Gen 2 entry in upstream perf.yaml 0.66.0). compile jgl90dqmg / profile jpe0rqnvg. HF card anguoyang/cvt-qcs6490",
+     "precision": "float",
+     "runtime": "precompiled_qnn_onnx"
+    }
+   ]
+  },
+  {
+   "model": "detr-resnet50",
+   "model_full": "DETR-ResNet50 (Facebook, Apache-2.0) — end-to-end object detection, 100 queries",
+   "task": "object_detection",
+   "input": "1x3x640x640",
+   "coco_map": null,
+   "cells": [
+    {
+     "device": "rb3-gen2",
+     "job": "jp2q72m4p",
+     "latency_ms_estimate": 414.869,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "First public RB3 measurement (no RB3 Gen 2 entry in upstream perf.yaml 0.66.0). compile jp2q72m4p / profile jp8d3l7x5. HF card anguoyang/detr-resnet50-qcs6490",
+     "precision": "float",
+     "runtime": "precompiled_qnn_onnx"
+    }
+   ]
+  },
+  {
+   "model": "ddrnet23-slim",
+   "model_full": "DDRNet-23-slim (MIT) — real-time semantic segmentation, 19 classes (Cityscapes)",
+   "task": "segmentation",
+   "input": "1x3x1024x2048",
+   "coco_map": null,
+   "cells": [
+    {
+     "device": "rb3-gen2",
+     "job": "jgl90j08g",
+     "latency_ms_estimate": 219.788,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "First public RB3 measurement (no RB3 Gen 2 entry in upstream perf.yaml 0.66.0). compile jgl90j08g / profile jpvy1j1jp. HF card anguoyang/ddrnet23-slim-qcs6490",
+     "precision": "float",
+     "runtime": "precompiled_qnn_onnx"
+    }
+   ]
+  },
+  {
+   "model": "esrgan",
+   "model_full": "ESRGAN (Apache-2.0) — 4x super-resolution",
+   "task": "super_resolution",
+   "input": "1x3x128x128",
+   "coco_map": null,
+   "cells": [
+    {
+     "device": "rb3-gen2",
+     "job": "j5693kq05",
+     "latency_ms_estimate": 1638.122,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "First public RB3 measurement (no RB3 Gen 2 entry in upstream perf.yaml 0.66.0). compile j5693kq05 / profile jp3l4yqlp. HF card anguoyang/esrgan-qcs6490",
+     "precision": "float",
+     "runtime": "precompiled_qnn_onnx"
+    }
+   ]
   }
  ],
  "name": "qcs-bench",
@@ -826,5 +926,5 @@
  },
  "protocol_version": "1.0",
  "schema": 1,
- "updated": "2026-11-24"
+ "updated": "2026-11-25"
 }
