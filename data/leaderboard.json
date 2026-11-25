@@ -947,6 +947,26 @@
      "runtime": "precompiled_qnn_onnx"
     }
    ]
+  },
+  {
+   "model": "mediapipe-hand",
+   "model_full": "MediaPipe Hand Detection (Google, Apache-2.0) — palm detector, front-end of the hand pose pipeline",
+   "task": "pose_estimation",
+   "input": "1x3x256x256",
+   "coco_map": null,
+   "cells": [
+    {
+     "device": "rb3-gen2",
+     "job": "jp08ek095",
+     "latency_ms_estimate": 26.891,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "First public RB3 measurement (no RB3 Gen 2 entry in upstream perf.yaml 0.66.0). compile jp08ek095 / profile jp8dw8yk5. HF card anguoyang/mediapipe-hand-qcs6490",
+     "precision": "float",
+     "runtime": "precompiled_qnn_onnx"
+    }
+   ]
   }
  ],
  "name": "qcs-bench",
