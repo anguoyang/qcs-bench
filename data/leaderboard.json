@@ -907,6 +907,46 @@
      "runtime": "precompiled_qnn_onnx"
     }
    ]
+  },
+  {
+   "model": "depth-anything-v3",
+   "model_full": "Depth Anything V3 (Apache-2.0) — monocular depth estimation",
+   "task": "depth_estimation",
+   "input": "1x3x518x518",
+   "coco_map": null,
+   "cells": [
+    {
+     "device": "rb3-gen2",
+     "job": "jp8dw7mq5",
+     "latency_ms_estimate": 1709.091,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "First public RB3 measurement (no RB3 Gen 2 entry in upstream perf.yaml 0.66.0). compile jp8dw7mq5 / profile j5qx92rep. HF card anguoyang/depth-anything-v3-qcs6490",
+     "precision": "float",
+     "runtime": "precompiled_qnn_onnx"
+    }
+   ]
+  },
+  {
+   "model": "repvit",
+   "model_full": "RepViT (Apache-2.0) — image classification, 1000 classes",
+   "task": "image_classification",
+   "input": "1x3x224x224",
+   "coco_map": null,
+   "cells": [
+    {
+     "device": "rb3-gen2",
+     "job": "jgdy7v2lg",
+     "latency_ms_estimate": 36.28,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "First public RB3 measurement (no RB3 Gen 2 entry in upstream perf.yaml 0.66.0). compile jgdy7v2lg / profile jp46jw1l5. HF card anguoyang/repvit-qcs6490",
+     "precision": "float",
+     "runtime": "precompiled_qnn_onnx"
+    }
+   ]
   }
  ],
  "name": "qcs-bench",
