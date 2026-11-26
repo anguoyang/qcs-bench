@@ -118,3 +118,9 @@ Model card: [huggingface.co/anguoyang/internvl3.5-2b-qcs6490](https://huggingfac
 ## Why the same model can be 27x faster
 
 YOLOv11-N on the RB3 (QCS6490): 134.7 ms with the default TFLite float path, 5.03 ms with w8a8 + precompiled QNN — same model, same chip. Most published numbers are the slow path. This repo exists so you pick the fast one on purpose.
+
+## Related projects
+
+- [rk-bench](https://github.com/anguoyang/rk-bench) — the flagship leaderboard: RK3588 latency table plus the cross-chip GenAI table (RK3588 + QCS6490), failures included
+- [qcs-model-zoo](https://github.com/anguoyang/qcs-model-zoo) — index of every measured model card on Hugging Face
+- [qcs-doctor](https://github.com/anguoyang/qcs-doctor) — pre-flight checks for the Qualcomm AI Hub conversion path, built from these failure records
