@@ -967,6 +967,106 @@
      "runtime": "precompiled_qnn_onnx"
     }
    ]
+  },
+  {
+   "model": "convnext-v2-base",
+   "model_full": "ConvNeXt V2 Base (Meta, Apache-2.0)",
+   "task": "image_classification",
+   "input": "1x3x224x224",
+   "coco_map": null,
+   "cells": [
+    {
+     "device": "rb3-gen2",
+     "job": "jpvy9qzmp",
+     "latency_ms_estimate": 125.445,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "First public RB3 measurement (no RB3 Gen 2 entry in upstream perf.yaml 0.66.0). compile jpvy9qzmp / profile jpe0lo40g. HF card anguoyang/convnext-v2-base-qcs6490",
+     "precision": "float",
+     "runtime": "precompiled_qnn_onnx"
+    }
+   ]
+  },
+  {
+   "model": "dfine",
+   "model_full": "D-FINE (Apache-2.0) — real-time object detector",
+   "task": "object_detection",
+   "input": "1x3x640x640",
+   "coco_map": null,
+   "cells": [
+    {
+     "device": "rb3-gen2",
+     "job": "j571729l5",
+     "latency_ms_estimate": 214.337,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "First public RB3 measurement (no RB3 Gen 2 entry in upstream perf.yaml 0.66.0). compile j571729l5 / profile jpx8d9x15. HF card anguoyang/dfine-qcs6490",
+     "precision": "float",
+     "runtime": "precompiled_qnn_onnx"
+    }
+   ]
+  },
+  {
+   "model": "electra-bert-base-discrim-google",
+   "model_full": "ELECTRA BERT Base Discriminator, Google (Apache-2.0)",
+   "task": "text_classification",
+   "input": "1x384 tokens + mask",
+   "coco_map": null,
+   "cells": [
+    {
+     "device": "rb3-gen2",
+     "job": "jgdyznmrg",
+     "latency_ms_estimate": 983.877,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "First public RB3 measurement (no RB3 Gen 2 entry in upstream perf.yaml 0.66.0). compile jgdyznmrg / profile j5w01wrmp. HF card anguoyang/electra-bert-base-discrim-google-qcs6490",
+     "precision": "float",
+     "runtime": "precompiled_qnn_onnx"
+    }
+   ]
+  },
+  {
+   "model": "yamnet",
+   "model_full": "YamNet (Google, MIT) — audio event classification",
+   "task": "audio_classification",
+   "input": "1x1x96x64 log-mel",
+   "coco_map": null,
+   "cells": [
+    {
+     "device": "rb3-gen2",
+     "job": "jgkw973yg",
+     "latency_ms_estimate": 2.176,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "Independent RB3 measurement under a uniform fp32 protocol. Upstream perf.yaml lists RB3 entries (0.505-0.713 ms, TFLite/QNN-DLC paths); different runtime path, not directly comparable. compile jgkw973yg / profile j5qxme37p. HF card anguoyang/yamnet-qcs6490",
+     "precision": "float",
+     "runtime": "precompiled_qnn_onnx"
+    }
+   ]
+  },
+  {
+   "model": "mobilesam",
+   "model_full": "MobileSAM image encoder (Apache-2.0) — exported graph is the image-encoder part",
+   "task": "segmentation",
+   "input": "1x3x1024x1024",
+   "coco_map": null,
+   "cells": [
+    {
+     "device": "rb3-gen2",
+     "job": "jgkw97yog",
+     "latency_ms_estimate": 1482.195,
+     "latency_ms_median": null,
+     "layers_npu": null,
+     "layers_total": null,
+     "notes": "First public RB3 measurement (no RB3 Gen 2 entry in upstream perf.yaml 0.66.0). compile jgkw97yog / profile j5qxme2mp. HF card anguoyang/mobilesam-qcs6490",
+     "precision": "float",
+     "runtime": "precompiled_qnn_onnx"
+    }
+   ]
   }
  ],
  "name": "qcs-bench",
